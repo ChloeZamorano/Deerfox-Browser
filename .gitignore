@@ -1,32 +1,15 @@
-# Prerequisites
-*.d
+#Output directories
+.vs/
+bin/
+bin-int/
+DeerfoxBrowser/deps/GLFW/bin/
+DeerfoxBrowser/deps/GLFW/bin-int/
+DeerfoxBrowser/deps/Glad/bin/
+DeerfoxBrowser/deps/Glad/bin-int/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+#Files
+*.user
+*.sln
+*.ini
+*.vcxproj
+*.filters

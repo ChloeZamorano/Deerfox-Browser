@@ -1,0 +1,6 @@
+[submodule "Deerfox Browser\\deps\\GLFW"]
+	path = Deerfox Browser\\deps\\GLFW
+	url = https://github.com/ChloeZamorano/glfw
+[submodule "DeerfoxBrowser\\deps\\imgui"]
+	path = DeerfoxBrowser\\deps\\imgui
+	url = https://github.com/ChloeZamorano/imgui
