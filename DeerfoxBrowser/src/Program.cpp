@@ -1,29 +1,39 @@
-﻿#include "TypedefsINeed.h"
+﻿#include "DfPch.h"
+#include "TypedefsINeed.h"
 
 #include "ImGui/ImGui.h"
 #include "GLFW/GLFW.h"
+#include "Tab/TabStack.h"
 
 i32 main()
 {
-	GLFWwindow* OsWindow = Deerfox::GLFW::Setup();
+	// Setup GLFW and the tab stack
+	GLFWwindow* osWindow = Deerfox::GLFWDF::Setup();
+	Deerfox::TabStack tabStack;
 
-	Deerfox::ImGuiDF::Setup(OsWindow);
+	tabStack.PushTab(new Deerfox::Tab("New tab", ""));
+	// TEMP: Testing tabs
+	tabStack.PushTab(new Deerfox::Tab("Ah, hello, Gordon!", "https://www.google.com/"));
+	tabStack.PushTab(new Deerfox::Tab("H E L L O G O R D O N", "https://www.youtube.com/"));
+
+	//Init ImGui
+	Deerfox::ImGuiDF::Setup(osWindow);
+
 	while (true)
 	{
 		Deerfox::ImGuiDF::Begin();
 		{
-			ImGui::Begin("Ah, hello, Gordon!");
-			ImGui::Text("Another day, another dollar!");
-			ImGui::End();
-
-			ImGui::Begin("H E L L O G O R D O N");
-			ImGui::Text("I have unleashed,\nthe power of\nall 300 clones!");
-			ImGui::End();
+			// Render all tabs with ImGui
+			for (auto& tab : tabStack)
+				tab->ImGuiRender();
 		}
 		Deerfox::ImGuiDF::End();
 
-		Deerfox::GLFW::Update(OsWindow);
+		// Update GL and GLFW
+		Deerfox::GLFWDF::Update(osWindow);
 	}
+
+	// Shut ImGui down
 	Deerfox::ImGuiDF::Shutdown();
 
 	return EXIT_SUCCESS;

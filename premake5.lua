@@ -36,8 +36,8 @@ project "DeerfoxBrowser"
 	targetdir ("bin/" .. outputdir .. "/DeerfoxBrowser")
 	objdir ("bin-int/" .. outputdir .. "/DeerfoxBrowser")
 
-	--pchheader "dfpch.h"
-	--pchsource "DeerfoxBrowser/src/drpch.cpp"
+	pchheader "DfPch.h"
+	pchsource "DeerfoxBrowser/src/DfPch.cpp"
 
 	files
 	{

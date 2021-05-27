@@ -1,3 +1,4 @@
+#include "DfPch.h"
 #include "GLFW.h"
 
 #include <GLFW/glfw3.h>
@@ -5,7 +6,7 @@
 
 namespace Deerfox
 {
-	GLFWwindow* GLFW::Setup()
+	GLFWwindow* GLFWDF::Setup()
 	{
 		glfwInit();
 		GLFWwindow* wdw = glfwCreateWindow(1, 1, "", nullptr, nullptr);
@@ -17,7 +18,7 @@ namespace Deerfox
 		return wdw;
 	}
 
-	void GLFW::Update(GLFWwindow* wdw)
+	void GLFWDF::Update(GLFWwindow* wdw)
 	{
 		glfwSwapBuffers(wdw);
 		glfwPollEvents();

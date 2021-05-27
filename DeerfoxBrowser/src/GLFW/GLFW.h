@@ -4,7 +4,7 @@ struct GLFWwindow;
 
 namespace Deerfox
 {
-	class GLFW
+	class GLFWDF
 	{
 	public:
 		static GLFWwindow* Setup();
